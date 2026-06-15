@@ -52,9 +52,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Sử dụng hình ảnh pixel được hệ thống khởi tạo tự động */
-    background: url('http://googleusercontent.com/image_generation_content/0') center/cover no-repeat;
-    /* Hiệu ứng zoom nhẹ tạo cảm giác chuyển động */
+    background: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1200&auto=format&fit=crop') center/cover no-repeat;
     animation: slowPan 20s infinite alternate ease-in-out;
     z-index: 1;
 }
