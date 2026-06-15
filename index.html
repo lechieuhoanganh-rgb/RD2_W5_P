@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sức Hút Của Đồ Họa Pixel</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content scroll-reveal">
+            <h1>PIXEL ART</h1>
+            <p>Khi những ô vuông tạo nên thế giới không giới hạn</p>
+            <a href="#advantages" class="btn-start">Khám Phá Ngay</a>
+        </div>
+    </header>
+
+    <main id="advantages" class="advantages-section">
+        <h2 class="section-title scroll-reveal">Tại Sao Nên Chơi Game Pixel?</h2>
+        
+        <div class="skills-container">
+            <div class="skill-card scroll-reveal">
+                <h3>Kích Thích Trí Tưởng Tượng</h3>
+                <p>Không quá tả thực, pixel buộc não bộ tự vẽ nên những chi tiết còn thiếu.</p>
+                <div class="progress-bar"><div class="progress" data-width="95%"></div></div>
+            </div>
+            <div class="skill-card scroll-reveal">
+                <h3>Góc Nhìn Vượt Thời Gian</h3>
+                <p>Đồ họa 3D có thể lỗi thời sau vài năm, nhưng Pixel Art luôn giữ nguyên giá trị nghệ thuật.</p>
+                <div class="progress-bar"><div class="progress" data-width="90%"></div></div>
+            </div>
+            <div class="skill-card scroll-reveal">
+                <h3>Tối Ưu Hiệu Năng</h3>
+                <p>Dung lượng nhẹ, mượt mà trên mọi cấu hình máy nhưng lối chơi vẫn cực kỳ sâu sắc.</p>
+                <div class="progress-bar"><div class="progress" data-width="85%"></div></div>
+            </div>
+        </div>
+    </main>
+
+    <section class="games-section">
+        <h2 class="section-title scroll-reveal">4 Tựa Game Pixel Đỉnh Cao</h2>
+        <div class="games-grid">
+            
+            <div class="game-card scroll-reveal" data-game="stardew">
+                <div class="game-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?w=500&auto=format&fit=crop" alt="Stardew Valley" class="game-thumb">
+                </div>
+                <div class="game-info">
+                    <h3>Stardew Valley</h3>
+                    <p>Huyền thoại game nông trại thư giãn.</p>
+                </div>
+            </div>
+
+            <div class="game-card scroll-reveal" data-game="celeste">
+                <div class="game-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&auto=format&fit=crop" alt="Celeste" class="game-thumb">
+                </div>
+                <div class="game-info">
+                    <h3>Celeste</h3>
+                    <p>Hành trình leo núi đầy thử thách và cảm xúc.</p>
+                </div>
+            </div>
+
+            <div class="game-card scroll-reveal" data-game="terraria">
+                <div class="game-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500&auto=format&fit=crop" alt="Terraria" class="game-thumb">
+                </div>
+                <div class="game-info">
+                    <h3>Terraria</h3>
+                    <p>Thế giới mở sinh tồn phiêu lưu bất tận.</p>
+                </div>
+            </div>
+
+            <div class="game-card scroll-reveal" data-game="deadcells">
+                <div class="game-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&auto=format&fit=crop" alt="Dead Cells" class="game-thumb">
+                </div>
+                <div class="game-info">
+                    <h3>Dead Cells</h3>
+                    <p>Hành động Roguelike dồn dập, mượt mà.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="gameModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content">
+            <img id="modalImg" src="" alt="Game Detail">
+            <div class="modal-text">
+                <h2 id="modalTitle">Tên Game</h2>
+                <p id="modalDesc">Mô tả chi tiết...</p>
+            </div>
+        </div>
+    </div>
+
+    <script href="script/script.js"></script>
+</body>
+</html>

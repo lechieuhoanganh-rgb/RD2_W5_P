@@ -1,0 +1,304 @@
+/* --- CẤU HÌNH CHUNG & BIẾN MÀU SẮC --- */
+:root {
+    --primary-color: #ff4a5a;
+    --bg-dark: #0f0c1b;
+    --bg-card: #1d1833;
+    --text-main: #ffffff;
+    --text-muted: #a39fbc;
+    --font-retro: 'Press Start 2P', cursive;
+    --font-sans: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* --- HIỆU ỨNG XUẤT HIỆN KHI SCROLL --- */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- SECTION 1: HERO (HÌNH NỀN ĐỘNG CHÍNH) --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Sử dụng hình ảnh pixel được hệ thống khởi tạo tự động */
+    background: url('http://googleusercontent.com/image_generation_content/0') center/cover no-repeat;
+    /* Hiệu ứng zoom nhẹ tạo cảm giác chuyển động */
+    animation: slowPan 20s infinite alternate ease-in-out;
+    z-index: 1;
+}
+
+@keyframes slowPan {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(15, 12, 27, 0.4), var(--bg-dark));
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-retro);
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 4px 4px 0px var(--primary-color);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.btn-start {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(255, 74, 90, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-start:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 74, 90, 0.6);
+}
+
+/* --- SECTION 2: LỢI THẾ & THANH TRẠNG THÁI --- */
+.advantages-section, .games-section {
+    padding: 100px 5% 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: var(--font-retro);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #00ffcc;
+    text-shadow: 2px 2px 0px #000;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.skill-card {
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-color);
+}
+
+.skill-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.skill-card p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+/* Thanh trạng thái sống động */
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #0f0c1b;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0; /* Sẽ tăng bằng JS */
+    background: linear-gradient(90deg, var(--primary-color), #ff8a00);
+    border-radius: 6px;
+    transition: width 1.5s cubic-bezier(0.1, 0.8, 0.3, 1);
+}
+
+/* --- SECTION 3: LƯỚI 4 TỰA GAME --- */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.game-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.game-img-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.game-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.game-card:hover .game-thumb {
+    transform: scale(1.1);
+}
+
+.game-info {
+    padding: 20px;
+}
+
+.game-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.game-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- MODAL HIỆU ỨNG PHÓNG TO & CHI TIẾT --- */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(15, 12, 27, 0.95);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    max-width: 800px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    transform: scale(0.7);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+#modalImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-text {
+    padding: 4px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#modalTitle {
+    font-family: var(--font-retro);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+#modalDesc {
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px; right: 30px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive cho thiết bị di động */
+@media (max-width: 768px) {
+    .modal-content {
+        grid-template-columns: 1fr;
+    }
+    #modalImg {
+        height: 250px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
